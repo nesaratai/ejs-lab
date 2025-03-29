@@ -3,9 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menu</title>
+  <title> Menu! </title>
 </head>
+<%- include('./partials/nav') %>
 <body>
   <h1>Full Menu</h1>
+  <h2>Mains</h2>
+  <ul>
+    <% menu.forEach(item => { %>
+      <% if (item.category === "mains") { %>
+        <li>
+          <strong><%= item.name %></strong> - $<%= item.price %> ⭐ <%= item.rating %>/5
+          <p><%= item.details %></p>
+        </li>
+      <% } %>
+    <% }) %>
+  </ul>
+
+  <h2>Desserts</h2>
+  <ul>
+    <% menu.forEach(item => { %>
+      <% if (item.category === "desserts") { %>
+        <li>
+          <strong><%= item.name %></strong> - $<%= item.price %> ⭐ <%= item.rating %>/5
+          <p><%= item.details %></p>
+        </li>
+      <% } %>
+    <% }) %>
+  </ul>
+
+  <h2>Sides</h2>
+  <ul>
+    <% menu.forEach(item => { %>
+      <% if (item.category === "sides") { %>
+        <li>
+          <strong><%= item.name %></strong> - $<%= item.price %> ⭐ <%= item.rating %>/5
+          <p><%= item.details %></p>
+        </li>
+      <% } %>
+    <% }) %>
+  </ul>
+
+
+</body>
+</html>
 </body>
 </html>

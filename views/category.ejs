@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%category%></title>
+</head>
+<%- include('./partials/nav') %>
+<body>
+  <h1><%category%></h1>
+<ul>
+    <%if(category === 'Mains'){ %>
+        <li>
+            <%category.forEach(item => {%>
+                <strong><%= item.name %></strong> - $<%= item.price %> ⭐ <%= item.rating %>/5
+                <p><%= item.details %></p>
+            <%});%>
+            </li>
+   <% }%>
+</ul>
+</body>
+</html>

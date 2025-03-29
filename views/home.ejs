@@ -5,21 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
 </head>
+
+<%- include('./partials/nav') %>
+
 <body>
-  <%- include('./partials/nav') %>
-  
-  <h1>Home Page</h1>
-  <ul>
-    <li>
-      <%restaurant.name%>
-    </li>
-    <li>
-      <%restaurant.address%>
-    </li>
-    <li>
-      <%restaurant.phone%>
-    </li>
-    
-  </ul>
+  <h2>Welcome to <%= restaurant.name %></h2>
+  <p><strong>Address:</strong> <%= restaurant.address %></p>
+  <p><strong>Phone:</strong> <%= restaurant.phone %></p>
+  <% if (restaurant.isOpen) { %>
+    <p style="color: green;">Yes, we are open!</p>
+<% } else { %>
+    <p style="color: red;">Sorry, we are closed.</p>
+<% } %>
 </body>
 </html>

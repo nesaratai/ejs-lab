@@ -50,12 +50,26 @@ const RESTAURANT = {
   }
   
 app.get('/', (req, res) => {
-    res.render('home.ejs',)
+    res.render('home.ejs', {
+      restaurant: RESTAURANT
+})
 });
 
 
+app.get('/menu', (req, res) => {
+  res.render('menu.ejs', { 
+    menu: RESTAURANT.menu });
+});
 
-app.listen(3000);
+app.get('/menu/:category', (req, res) => {
+    const index = req.params.category
+    res.render('category.ejs', {
+      category: RESTAURANT.menu.category
+    });
+      
+});
+
+app.listen(3001);
 
 
 
